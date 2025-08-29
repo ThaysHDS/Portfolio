@@ -1,0 +1,27 @@
+/* Tema Padrão: Dark */
+:root {
+  --blue-light: #0FA4C7;
+  --blue-dark: #10718B;
+  --teal: #0DA2A0;
+  --purple: #94199E;
+  --black: #121212;
+  --page-bg: #191919;
+  --page-black: #2D2D2D;
+  --white: #F3F4F6;
+  --blue-steel: #1A6E8A;
+  --charcoal: #17262C;
+  --gray: #D1D5DB;
+
+  --font-title: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Tema Claro */
+body.light-mode,
+body.light-mode footer {
+  --page-bg: #EBEBEB;
+  --black: #F1F2F4;
+  --gray: #121212;
+  --white: #191919;
+  --charcoal: #F3F4F6;
+}

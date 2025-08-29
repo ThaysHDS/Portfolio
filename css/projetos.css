@@ -1,0 +1,115 @@
+/* Reset básico para a seção principal */
+.pelasruas-section {
+  background-color: var(--page-bg);
+  color: var(--white);
+  font-family: var(--font-body);
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(15, 164, 199, 0.3);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Títulos */
+.pelasruas-section h2,
+.pelasruas-section h3 {
+  font-family: var(--font-title);
+  color: var(--blue-light);
+  margin: 20px 20px 20px 0 ;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.pelasruas-section h3 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 1.8rem;
+}
+
+/* Parágrafos */
+.pelasruas-section p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Listas estilizadas */
+.pelasruas-section ul {
+  list-style: inside disc;
+  margin-left: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--gray);
+}
+
+/* Links */
+.pelasruas-section a.btn {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  background: var(--teal);
+  color: var(--white);
+  font-weight: 600;
+  font-family: var(--font-title);
+  border-radius: 35px;
+  box-shadow: 0 4px 8px rgba(148, 25, 158, 0.2);
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.25s ease;
+  user-select: none;
+}
+
+.pelasruas-section a.btn:hover,
+.pelasruas-section a.btn:focus {
+  background: var(--blue-light);
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(15, 164, 199, 0.6);
+  outline: none;
+}
+
+/* Header estilizado */
+.custom-header {
+  background: var(--page-black);
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-body);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.theme-toggle {
+  font-size: 1.6rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--blue-light);
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+.theme-toggle:hover {
+  color: var(--teal);
+}
+
+.pelasruas-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.pelasruas-text {
+  flex: 1;
+  text-align: left;
+}
+
+.pelasruas-section a.btn {
+  float: right;
+}
+
+.pelasruas-section {
+  margin-bottom: 0;
+}
+

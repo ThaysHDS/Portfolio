@@ -1,0 +1,35 @@
+.custom-header {
+  background-color: var(--black); 
+  color: var(--gray);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid var(--blue-steel);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-header nav {
+  padding-bottom: 6px; 
+}
+
+.logo-img {
+  height: 30px;
+}
+
+.hero-section {
+  padding-top: 120px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; 
+  text-align: left;       
+  padding-left: 3rem;      
+  padding-right: 3rem;
+}
+
+

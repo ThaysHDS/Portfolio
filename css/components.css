@@ -1,0 +1,294 @@
+/* Navegação */
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-weight: 600;
+  font-family: var(--font-title);
+}
+
+.nav-menu li a {
+  color: var(--white);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  background: var(--purple);
+  transition: width 0.3s ease;
+  border-radius: 3px;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a:focus {
+  color: var(--purple);
+}
+
+.nav-menu li a:hover::after,
+.nav-menu li a:focus::after {
+  width: 100%;
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.collapse {
+  display: none;
+  transition: all 0.3s ease;
+}
+.collapse.show {
+  display: block;
+}
+
+
+/* floating-bubbles container */
+#floating-bubbles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0; 
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  animation-name: floatUp;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--gray);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--purple);
+}
+
+.theme-toggle::after {
+  content: "";
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem; 
+}
+
+.sobre-section-title{
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  color: var(--purple);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding-bottom: 6px;
+}
+
+.sobre-section-title::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15%; 
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--purple);
+  border-radius: 2px;
+}
+
+.projeto-section-title{
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  color: var(--purple);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding-bottom: 6px;
+}
+
+.projeto-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%; 
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--purple);
+  border-radius: 2px;
+}
+
+.projeto-item img {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInCard 0.8s ease-out forwards;
+}
+
+@keyframes fadeInCard {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Moeda 3D Flip */
+.sobre-img-container {
+  perspective: 1000px;
+  width: 200px;
+  height: 200px;
+}
+
+.moeda-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
+}
+
+.moeda-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.frente {
+  transform: rotateY(0deg);
+}
+
+.verso {
+  transform: rotateY(180deg);
+}
+
+.girar {
+  transform: rotateY(180deg);
+}
+
+.servicos-section-title{
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  color: var(--purple);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding-bottom: 6px;
+}
+
+.servicos-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%; 
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--purple);
+  border-radius: 2px;
+}
+
+.habilidades-section-title{
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  color: var(--purple);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding-bottom: 6px;
+}
+
+.habilidades-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%; 
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--purple);
+  border-radius: 2px;
+}
+
+.contato-section-title{
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  color: var(--purple);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding-bottom: 6px;
+}
+
+.contato-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 68%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--purple);
+  border-radius: 2px;
+}
+
+.scroll-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #94199E;
+  color: #EBEBEB;
+  padding: 14px 15px;
+  border-radius: 50%;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para o ícone de seta */
+.scroll-top-btn i {
+  font-size: 18px; /* Ajuste o tamanho do ícone conforme necessário */
+}
