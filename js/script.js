@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const maxBolinhas = 150;
   const cores = ["#301832", "#1A6E8A", "#94199E", "#10718B"];
   const container = document.getElementById("floating-bubbles");
-  const header = document.querySelector("header"); // Ajuste se o header tem id ou classe diferente
+  const header = document.querySelector("header");
 
   for (let i = 0; i < maxBolinhas; i++) {
     const bubble = document.createElement("div");
@@ -40,10 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Header visível -> toca bolinhas
             tocarBolinhas();
           } else {
-            // Header não visível -> pausa bolinhas
             pausarBolinhas();
           }
         });
@@ -72,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Verifica tema salvo no localStorage
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "light") {
     body.classList.add("light-mode");
@@ -81,10 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtn.textContent = "🌙";
   }
 
-  // Atualiza a logo após aplicar tema salvo
   updateLogo();
 
-  // Listener para troca de tema
   toggleBtn.addEventListener("click", () => {
     body.classList.toggle("light-mode");
 
@@ -127,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
         projeto.classList.remove("hide");
       });
 
-      // Adiciona imagem card final
       const cardFinal = document.createElement("div");
       cardFinal.classList.add("projeto-item");
 
@@ -136,7 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
 
       projetosList.appendChild(cardFinal);
-
       carregarMaisBtn.style.display = "none";
     });
   }
@@ -160,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const barras = document.querySelectorAll(".progresso");
     barras.forEach((barra) => {
       const valor = barra.getAttribute("data-progresso");
-      barra.style.width = valor; // Espera um valor tipo '80%'
+      barra.style.width = valor;
     });
   }
 
@@ -172,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             animarHabilidades();
-            observer.disconnect(); // Para não animar de novo
+            observer.disconnect();
           }
         });
       },
@@ -182,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
     observerHabilidades.observe(habilidadesSection);
   }
 
-  // Inicializar Glider
+  // === Inicializar Glider ===
   if (document.querySelector(".glider")) {
     new Glider(document.querySelector(".glider"), {
       slidesToShow: 1,
@@ -217,14 +210,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (footers.length && typeof gsap !== "undefined") {
     footers.forEach((footer) => {
-      // Inicializa no estado inicial
       gsap.set(footer, { y: 100, opacity: 0 });
 
       const footerObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              // Quando footer aparece na tela, anima para visível
               gsap.to(footer, {
                 y: 0,
                 opacity: 1,
@@ -232,7 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 ease: "power3.out",
               });
             } else {
-              // Quando footer sai da tela, reseta para o estado inicial
               gsap.to(footer, {
                 y: 100,
                 opacity: 0,
@@ -242,14 +232,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           });
         },
-        {
-          threshold: 0.2,
-        }
+        { threshold: 0.2 }
       );
 
       footerObserver.observe(footer);
 
-      // Força animação se o footer já estiver visível ao carregar a página
       if (footer.getBoundingClientRect().top < window.innerHeight) {
         gsap.to(footer, {
           y: 0,
@@ -261,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  //Mensagem do form
+  // === MENSAGEM DO FORMULÁRIO ===
   const form = document.getElementById("contato-form");
   const statusDiv = document.getElementById("form-status");
 
@@ -307,25 +294,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Obter o botão
+  // === BOTÃO SCROLL TO TOP ===
   const scrollTopButton = document.querySelector(".scroll-top-btn");
 
-  // Exibir o botão quando o usuário rolar para baixo
   window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
-      // Se o usuário rolar 300px ou mais
       scrollTopButton.style.display = "block";
     } else {
       scrollTopButton.style.display = "none";
     }
   });
 
-  // Ao clicar no botão, rola para o topo
   scrollTopButton.addEventListener("click", (event) => {
     event.preventDefault();
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Rolagem suave
+      behavior: "smooth",
     });
   });
+
+  // === GEOLOCALIZAÇÃO COM IPINFO.IO ===
+  fetch("https://ipinfo.io/json?token=SEU_TOKEN_AQUI") // <- Substitua com seu token real
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("IP:", data.ip);
+      console.log("Cidade:", data.city);
+      console.log("Região:", data.region);
+      console.log("País:", data.country);
+      console.log("Localização (lat,long):", data.loc);
+    })
+    .catch((err) => {
+      console.warn("Erro ao obter geolocalização:", err);
+    });
 });
+

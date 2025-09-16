@@ -655,7 +655,7 @@
   transition: opacity 0.6s ease, transform 0.6s ease;
   background-color: var(--page-bg);
   color: var(--white);
-  padding: 40px 20px;
+  padding: 20px;
 }
 
 .footer-container {
@@ -665,7 +665,8 @@
   gap: 30px;
   max-width: 1200px;
   text-align: left;
-  margin: 0 auto 0 150px;
+  margin-left: 150px; 
+  margin-right: auto;
 }
 
 .footer-col {

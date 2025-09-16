@@ -142,3 +142,9 @@
     flex: 1;
   }
 }
+
+@media (min-width: 1281px) {
+  .footer-container {
+    margin: 0 auto;
+  }
+}

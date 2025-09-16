@@ -278,14 +278,18 @@
   right: 20px;
   background-color: #94199E;
   color: #EBEBEB;
-  padding: 14px 15px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   border-radius: 50%;
-  font-size: 24px;
+  font-size: 14px;
   text-align: center;
+  line-height: 44px; /* para centralizar texto verticalmente */
   text-decoration: none;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
 /* Estilo para o ícone de seta */
